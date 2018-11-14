@@ -1,0 +1,30 @@
+import { ADD_JOURNAL, 
+    UPDATE_JOURNAL,
+    DELETE_JOURNAL,
+    FETCH_ALL_JOURNALS,
+    RECEIVE_JOURNALS } from '../constants/ActionTypes';
+import { AsyncStorage } from 'react-native';
+
+export const addJournal = journal => {
+    return {
+        type: ADD_JOURNAL,
+        id: Date.now(),
+        payload: journal
+    }
+};
+
+export const receiveJournals = journals => {
+    return {
+        type: RECEIVE_JOURNALS,
+        payload: journals
+    }
+};
+
+export const fetchAllJournals = () => {
+    return dispatch => {
+        return AsyncStorage.getItem('Journals')
+            .then(journals => {
+                dispatch(receiveJournals(JSON.parse(journals)));
+            });
+    }
+};
