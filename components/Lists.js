@@ -6,20 +6,20 @@ import {
 } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
     listItem: {
-        margin: 5
+        marginLeft: 10,
+        paddingLeft: 10
     }
 });
 
 const renderList = journals => {
     if (journals) {
         return journals.map((journal, i) => {
-            <Text styles={styles.listItem} key={i}>
-                {journal.title}
-            </Text>
+            return (
+                <Text styles={styles.listItem} key={i}>
+                    {journal.title}
+                </Text>
+            )
         });
     }
 }
