@@ -16,7 +16,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <AllJournals />
+        <AllJournals style={styles.journal}/>
       </Provider>
     );
   }
@@ -24,8 +24,7 @@ export default class HomeScreen extends React.Component {
 
 // Currently not used
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  journal: {
+    height: 150,
   },
 });

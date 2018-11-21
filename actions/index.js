@@ -20,6 +20,12 @@ export const receiveJournals = journals => {
     }
 };
 
+export const deleteJournals = () => {
+    return {
+        type: DELETE_JOURNALS
+    }
+};
+
 export const fetchAllJournals = () => {
     return dispatch => {
         return AsyncStorage.getItem('Journals')

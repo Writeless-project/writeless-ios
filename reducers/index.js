@@ -11,9 +11,17 @@ export const saveJournals = async state => {
     try {
         await AsyncStorage.setItem('Journals', JSON.stringify(state));
     } catch (err) {
-        console.error(`Error (saveJouransl): ${err.message}`);
+        console.error(`Error (saveJournals): ${err.message}`);
     }
 };
+
+export const deleteJournals = async () => {
+    try {
+        await AsyncStorage.removeItem('Journals');
+    } catch (err) {
+        console.error(`Error (deleteJournals): ${err.message}`);
+    }
+}
 
 const Journal = (state, action) => {
     switch (action.type) {
@@ -37,10 +45,12 @@ const AddJournal = (state, action) => {
             }
             const journals = [...state, Journal(null, action)];
             saveJournals(journals);
-
             return journals;
         case RECEIVE_JOURNALS:
             return action.payload;
+        case DELETE_JOURNALS:
+            deleteJournals();
+            return;
         default:
             return state;
     }

@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import List from './Lists';
 import AddJournal from '../containers/AddJournal';
+import DeleteJournals from '../containers/DeleteJournals';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +30,7 @@ class AllJournals extends Component {
             <View style={styles.container}>
                 <AddJournal />
                 <List journals={journals} />
+                <DeleteJournals />
             </View>
         );
     }
