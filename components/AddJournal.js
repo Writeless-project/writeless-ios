@@ -17,6 +17,7 @@ const AddJournal = ({ addJournal }) => {
     }
     
     return (
+        /* Wrapping Formik in a Form for the styling. There's gotta be a better way to do this */
         <Form>
         <Formik onSubmit={onSubmit}>
         {props => (
@@ -50,7 +51,7 @@ const AddJournal = ({ addJournal }) => {
     )
 };
 
-/* Because native-base doesn't have any margin for some reason */
+/* Because native-base doesn't have any margins for some reason */
 const styles = StyleSheet.create({
     button: {
         marginTop: 20,
