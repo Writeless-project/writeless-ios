@@ -10,9 +10,7 @@ import { Text, Button, Item, Input, Form } from 'native-base';
 const AddJournal = ({ addJournal }) => {
     return (
         <Form>
-        <Formik 
-            onSubmit={formValues => addJournal(formValues)}
-        >
+        <Formik onSubmit={formValues => addJournal(formValues)}>
         {props => (
             <View>
                 <Item>
