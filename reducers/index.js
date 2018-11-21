@@ -11,7 +11,7 @@ export const saveJournals = async state => {
     try {
         await AsyncStorage.setItem('Journals', JSON.stringify(state));
     } catch (err) {
-        console.log(`Error (saveJouransl): ${err.message}`);
+        console.error(`Error (saveJouransl): ${err.message}`);
     }
 };
 
@@ -20,18 +20,21 @@ const Journal = (state, action) => {
         case ADD_JOURNAL:
             return {
                 id: action.id,
-                title: action.payload,
+                title: action.payload.title,
+                content: action.payload.content,
                 createdAt: new Date()
             }
         default:
             return state;
-
     }
 };
 
-const AddJournal = (state = [], action) => {
+const AddJournal = (state, action) => {
     switch (action.type) {
         case ADD_JOURNAL:
+            if (!state) {
+                state = [];
+            }
             const journals = [...state, Journal(null, action)];
             saveJournals(journals);
 

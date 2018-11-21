@@ -9,10 +9,7 @@ import { Formik } from 'formik'
 
 const AddJournal = ({ addJournal }) => {
     return (
-        <Formik 
-            // initialValues={{ title: '', content: '' }} 
-            onSubmit={formValues => addJournal(formValues)}
-        >
+        <Formik onSubmit={formValues => addJournal(formValues)}>
             {props => (
                 <View>
                     <TextInput
