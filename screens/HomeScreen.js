@@ -10,10 +10,8 @@ import { StyleProvider } from 'native-base';
 const store = configureStore();
 
 export default class HomeScreen extends React.Component {
-  // Currently not used
   static navigationOptions = {
-    // header: null,
-    title: 'Writeless'
+    title: 'Journals'
   };
 
   render() {
@@ -26,11 +24,3 @@ export default class HomeScreen extends React.Component {
     );
   }
 }
-
-// Currently not used
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});

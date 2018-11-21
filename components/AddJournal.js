@@ -10,7 +10,7 @@ import { Text, Button, Item, Input, Form } from 'native-base';
 const AddJournal = ({ addJournal }) => {
     return (
         <Form>
-        <Formik onSubmit={formValues => addJournal(formValues)}>
+        <Formik onSubmit={(formValues, {resetForm}) => {addJournal(formValues); resetForm({});}}>
         {props => (
             <View>
                 <Item>
@@ -42,8 +42,8 @@ const AddJournal = ({ addJournal }) => {
     )
 };
 
+/* Because native-base doesn't have any margin for some reason */
 const styles = StyleSheet.create({
-
     button: {
         marginTop: 20,
         margin: 20,

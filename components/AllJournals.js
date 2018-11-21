@@ -3,7 +3,7 @@ import {
     View,
     StyleSheet
 } from 'react-native';
-import List from './Lists';
+import JournalList from './JournalList';
 import AddJournal from '../containers/AddJournal';
 import {Container, Content } from 'native-base';
 
@@ -15,11 +15,6 @@ const styles = StyleSheet.create({
 });
 
 class AllJournals extends Component {
-    // ERROR This doesn't work here. It has to be as the screen level
-    static navigationOptions = {
-        title: 'Journals',
-      };
-
     componentDidMount() {
         this._initial();
     }
@@ -35,7 +30,7 @@ class AllJournals extends Component {
             <Container>
                 <Content>
                     <AddJournal />
-                    <List journals={journals} />
+                    <JournalList journals={journals} />
                 </Content>
             </Container>
         );
