@@ -43,7 +43,6 @@ const AddJournal = ({ addJournal }) => {
                 onPress={props.handleSubmit}>
                     <Text>Submit</Text>
                 </Button>
-                
             </View>
         )}
         </Formik>
