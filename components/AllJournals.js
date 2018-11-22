@@ -3,9 +3,10 @@ import {
     View,
     StyleSheet
 } from 'react-native';
-import List from './Lists';
+import JournalList from './JournalList';
 import AddJournal from '../containers/AddJournal';
 import DeleteJournals from '../containers/DeleteJournals';
+import {Container, Content } from 'native-base';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,11 +28,13 @@ class AllJournals extends Component {
         const { journals } = this.props;
 
         return (
-            <View style={styles.container}>
-                <AddJournal />
-                <List journals={journals} />
-                <DeleteJournals />
-            </View>
+            <Container>
+                <Content>
+                    <AddJournal />
+                    <JournalList journals={journals} />
+                    <DeleteJournals />
+                </Content>
+            </Container>
         );
     }
 }
