@@ -1,7 +1,7 @@
 import {
     ADD_JOURNAL,
     UPDATE_JOURNAL,
-    DELETE_JOURNAL,
+    DELETE_JOURNALS,
     FETCH_ALL_JOURNALS,
     RECEIVE_JOURNALS
 } from '../constants/ActionTypes';

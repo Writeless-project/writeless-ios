@@ -1,6 +1,6 @@
 import { ADD_JOURNAL, 
     UPDATE_JOURNAL,
-    DELETE_JOURNAL,
+    DELETE_JOURNALS,
     FETCH_ALL_JOURNALS,
     RECEIVE_JOURNALS } from '../constants/ActionTypes';
 import { AsyncStorage } from 'react-native';
@@ -18,7 +18,7 @@ export const receiveJournals = journals => {
         type: RECEIVE_JOURNALS,
         payload: journals
     }
-};
+}; 
 
 export const deleteJournals = () => {
     return {

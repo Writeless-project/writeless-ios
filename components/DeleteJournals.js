@@ -7,12 +7,12 @@ import {
 } from 'react-native';
 import { Formik } from 'formik'
 
-const AddJournal = ({ addJournal }) => {
+const DeleteJournals = ({ deleteJournals }) => {
     return (
         <Formik onSubmit={formValues => deleteJournals()}>
             {props => (
                 <View>
-                    <Button onPress={props.handleSubmit} title="Submit" />
+                    <Button onPress={props.handleSubmit} title="Delete All Journals" />
                 </View>
             )}
         </Formik>
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AddJournal;
+export default DeleteJournals;
