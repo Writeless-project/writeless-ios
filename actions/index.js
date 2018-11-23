@@ -26,6 +26,12 @@ export const deleteJournals = () => {
     }
 };
 
+export const deleteJournal = () => {
+    return {
+        type: DELETE_JOURNAL
+    }
+};
+
 export const fetchAllJournals = () => {
     return dispatch => {
         return AsyncStorage.getItem('Journals')
