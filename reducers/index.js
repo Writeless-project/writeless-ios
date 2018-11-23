@@ -1,8 +1,8 @@
 import {
     ADD_JOURNAL,
     UPDATE_JOURNAL,
-    DELETE_JOURNALS,
     DELETE_JOURNAL,
+    DELETE_JOURNALS,
     FETCH_ALL_JOURNALS,
     RECEIVE_JOURNALS
 } from '../constants/ActionTypes';
@@ -27,6 +27,7 @@ export const deleteJournals = async () => {
 export const deleteJournal = async () => {
     try {
         // Insert fun asyncStorage logic here
+        console.log(`Delete a journal here`);
     } catch (err) {
         console.error(`Error (deleteJournal): ${err.message}`);
     }

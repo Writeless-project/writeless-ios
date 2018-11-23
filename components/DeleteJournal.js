@@ -8,7 +8,7 @@ import { Formik } from 'formik'
 // Where does deleteJournal() come from?
 const DeleteJournal = ({ deleteJournal }) => {
     return (
-        <Formik onSubmit={formValues => deleteJournal(formValues)}>
+        <Formik onSubmit={formValues => deleteJournal()}>
             {props => (
                 <View>
                     <Button onPress={props.handleSubmit} title="Delete"/>

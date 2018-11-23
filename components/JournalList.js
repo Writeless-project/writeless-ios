@@ -11,7 +11,6 @@ const renderList = journals => {
                     <Text>
                         {journal.title}
                     </Text>
-                    <DeleteJournal/>
                 </ListItem>
             )
         });
