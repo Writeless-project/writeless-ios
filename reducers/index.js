@@ -2,6 +2,7 @@ import {
     ADD_JOURNAL,
     UPDATE_JOURNAL,
     DELETE_JOURNALS,
+    DELETE_JOURNAL,
     FETCH_ALL_JOURNALS,
     RECEIVE_JOURNALS
 } from '../constants/ActionTypes';
@@ -20,6 +21,14 @@ export const deleteJournals = async () => {
         await AsyncStorage.removeItem('Journals');
     } catch (err) {
         console.error(`Error (deleteJournals): ${err.message}`);
+    }
+}
+
+export const deleteJournal = async () => {
+    try {
+        // Insert fun asyncStorage logic here
+    } catch (err) {
+        console.error(`Error (deleteJournal): ${err.message}`);
     }
 }
 
@@ -50,6 +59,9 @@ const AddJournal = (state, action) => {
             return action.payload;
         case DELETE_JOURNALS:
             deleteJournals();
+            return;
+        case DELETE_JOURNAL:
+            deleteJournal();
             return;
         default:
             return state;

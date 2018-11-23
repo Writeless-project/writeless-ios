@@ -2,14 +2,13 @@ import React from 'react';
 import {
     Button,
     View,
-    StyleSheet,
-    TextInput
 } from 'react-native';
 import { Formik } from 'formik'
 
+// Where does deleteJournal() come from?
 const DeleteJournal = ({ deleteJournal }) => {
     return (
-        <Formik onSubmit={formValues => deleteJournal()}>
+        <Formik onSubmit={formValues => deleteJournal(formValues)}>
             {props => (
                 <View>
                     <Button onPress={props.handleSubmit} title="Delete"/>

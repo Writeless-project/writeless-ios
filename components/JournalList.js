@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import DeleteJournal from './DeleteJournal';
 import { Text, List, ListItem } from 'native-base';
 
@@ -6,12 +7,11 @@ const renderList = journals => {
     if (journals) {
         return journals.map((journal, i) => {
             return (
-                <ListItem key={i}
-                style={{flexDirection:'row', justifyContent: 'space-between'}}>
+                <ListItem key={i} style={styles.listItem}>
                     <Text>
                         {journal.title}
                     </Text>
-                    <DeleteJournal style={{}}/>
+                    <DeleteJournal/>
                 </ListItem>
             )
         });
@@ -29,5 +29,12 @@ const JournalList = ({ journals }) => {
 JournalList.defaultProps = {
     journals: []
 }
+
+const styles = StyleSheet.create({
+    listItem: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    }
+});
 
 export default JournalList;
