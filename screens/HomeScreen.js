@@ -9,7 +9,7 @@ import { StyleProvider } from 'native-base';
 const store = configureStore();
 
 export default class HomeScreen extends React.Component {
-  // Currently not used
+
   static navigationOptions = {
     // header: null,
     title: 'Writeless'
@@ -19,7 +19,7 @@ export default class HomeScreen extends React.Component {
     return (
       <StyleProvider style={getTheme()}>
         <Provider store={store}>
-          <AllJournals />
+          <AllJournals navigation={this.props.navigation}/>
         </Provider>
       </StyleProvider>
     );

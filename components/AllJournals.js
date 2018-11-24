@@ -33,7 +33,7 @@ class AllJournals extends Component {
     }
 
     _addNewJournal() {
-        this.props.navigation.navigate.push('AddJournal');
+        this.props.navigation.navigate('AddJournal');
     }
 
     render() {
