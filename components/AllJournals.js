@@ -8,6 +8,10 @@ import AddJournal from '../containers/AddJournal';
 import DeleteJournal from '../containers/DeleteJournal';
 import DeleteJournals from '../containers/DeleteJournals';
 import {Container, Content } from 'native-base';
+import {
+    ADD_JOURNAL,
+} from '../constants/ActionTypes';
+import AddNewButton from '../components/AddNewButton';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,16 +29,20 @@ class AllJournals extends Component {
         this.props.fetchAllJournals();
     }
 
+    _addNewJournal() {
+        this.props.navigation.navigate('AddJournal');
+    }
+
     render() {
         const { journals } = this.props;
 
         return (
             <Container>
                 <Content>
-                    <AddJournal />
-                    <JournalList journals={journals} />
+                    <List journals={journals} />
                     <DeleteJournals />
                     <DeleteJournal />
+                    <AddNewButton onBtnPress={this._addNewJournal.bind(this)} />
                 </Content>
             </Container>
         );

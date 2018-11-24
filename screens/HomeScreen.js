@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-
 import { Provider } from 'react-redux';
 import AllJournals from '../containers/AllJournals';
 import configureStore from '../configureStore';
@@ -18,7 +17,7 @@ export default class HomeScreen extends React.Component {
     return (
       <StyleProvider style={getTheme()}>
         <Provider store={store}>
-          <AllJournals />
+          <AllJournals navigation={this.props.navigation}/>
         </Provider>
       </StyleProvider>
     );
