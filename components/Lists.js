@@ -3,6 +3,7 @@ import {
     View,
     Text,
     StyleSheet,
+    AsyncStorage
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -17,7 +18,7 @@ const renderList = journals => {
         return journals.map((journal, i) => {
             return (
                 <Text styles={styles.listItem} key={i}>
-                    {journal.title}
+                    {/* {journal.title} */}
                 </Text>
             )
         });

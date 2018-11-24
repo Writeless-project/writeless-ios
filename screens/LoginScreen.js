@@ -11,21 +11,21 @@ export default class LoginScreen extends Component {
     render() {
       return (
         <StyleProvider style={getTheme()}>
-        <Container>
-          <Content>
-            <Form>
-              <Item>
-                <Input placeholder="Username" />
-              </Item>
-              <Item last>
-                <Input placeholder="Password" />
-              </Item>
-              <Button full style={myStyles}>
-                <Text>Submit</Text>
-              </Button>
-            </Form>
-          </Content>
-        </Container>
+          <Container>
+            <Content>
+              <Form>
+                <Item>
+                  <Input placeholder="Username" />
+                </Item>
+                <Item last>
+                  <Input placeholder="Password" />
+                </Item>
+                <Button full style={myStyles}>
+                  <Text>Submit</Text>
+                </Button>
+              </Form>
+            </Content>
+          </Container>
         </StyleProvider>
       );
     }

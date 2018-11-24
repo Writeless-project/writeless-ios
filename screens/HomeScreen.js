@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-
 import { Provider } from 'react-redux';
 import AllJournals from '../containers/AllJournals';
 import configureStore from '../configureStore';
