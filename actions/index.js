@@ -1,9 +1,19 @@
-import { ADD_JOURNAL, 
+import { 
+    ADD_ENTRY,
+    ADD_JOURNAL, 
     UPDATE_JOURNAL,
     DELETE_JOURNALS,
     FETCH_ALL_JOURNALS,
     RECEIVE_JOURNALS } from '../constants/ActionTypes';
 import { AsyncStorage } from 'react-native';
+
+export const addEntry = (entry, journal) => {
+    return {
+        type: ADD_ENTRY,
+        id: Date.now(),
+        payload: {entry, journal}
+    }
+};
 
 export const addJournal = journal => {
     return {
