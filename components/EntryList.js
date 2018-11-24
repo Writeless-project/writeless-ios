@@ -1,6 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import DeleteJournal from './DeleteJournal';
 import { Text, List, ListItem } from 'native-base';
 import Swipeout from 'react-native-swipeout';
 
@@ -38,12 +36,5 @@ const JournalList = ({ journals }) => {
 JournalList.defaultProps = {
     journals: []
 }
-
-const styles = StyleSheet.create({
-    listItem: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    }
-});
 
 export default JournalList;

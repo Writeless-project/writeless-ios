@@ -1,4 +1,5 @@
 import {
+    ADD_ENTRY,
     ADD_JOURNAL,
     UPDATE_JOURNAL,
     DELETE_JOURNAL,
@@ -42,6 +43,25 @@ const Journal = (state, action) => {
                 content: action.payload.content,
                 createdAt: new Date()
             }
+        default:
+            return state;
+    }
+};
+
+const AddEntry = (state, action) => {
+    switch (action.type) {
+        case ADD_JOURNAL:
+            if (!state) {
+                state = [];
+            }
+            const journals = [...state, Journal(null, action)];
+            saveEntry(journals);
+            return journals;
+        case RECEIVE_JOURNALS:
+            return action.payload;
+        case DELETE_JOURNALS:
+            deleteJournals();
+            return;
         default:
             return state;
     }
