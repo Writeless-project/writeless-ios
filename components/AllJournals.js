@@ -39,7 +39,7 @@ class AllJournals extends Component {
         return (
             <Container>
                 <Content>
-                    <List journals={journals} />
+                    <JournalList journals={journals} />
                     <DeleteJournals />
                     <DeleteJournal />
                     <AddNewButton onBtnPress={this._addNewJournal.bind(this)} />

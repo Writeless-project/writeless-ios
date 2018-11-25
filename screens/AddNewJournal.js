@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
-import AddJournal from '../components/AddJournal';
+import AddJournal from '../containers/AddJournal';
 import configureStore from '../configureStore';
 import getTheme from '../native-base-theme/components';
 import { StyleProvider } from 'native-base';
@@ -9,10 +9,10 @@ import { StyleProvider } from 'native-base';
 const store = configureStore();
 
 export default class AddNewJournal extends React.Component {
-    // Currently not used
+
     static navigationOptions = {
         // header: null,
-        title: 'Add a new journal'
+        title: 'New Journal'
     };
 
     render() {

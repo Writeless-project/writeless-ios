@@ -7,7 +7,6 @@ import {
 import { Formik } from 'formik';
 import { Text, Button, Item, Input, Form } from 'native-base';
 
-
 const AddJournal = ({ addJournal }) => {
     // Is this the 'react way' of doing this? I don't know any other way w/out making it a class.
     function onSubmit(formValues, {resetForm}) {

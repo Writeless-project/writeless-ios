@@ -9,6 +9,7 @@ import { StyleProvider } from 'native-base';
 const store = configureStore();
 
 export default class HomeScreen extends React.Component {
+  
   static navigationOptions = {
     title: 'Journals'
   };
