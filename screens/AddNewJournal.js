@@ -19,7 +19,7 @@ export default class AddNewJournal extends React.Component {
         return (
             <StyleProvider style={getTheme()}>
                 <Provider store={store}>
-                    <AddJournal />
+                    <AddJournal navigation={this.props.navigation}/>
                 </Provider>
             </StyleProvider>
         );
