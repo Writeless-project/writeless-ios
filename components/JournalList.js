@@ -1,16 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-// import DeleteJournal from './DeleteJournal';
 import { Text, List, ListItem } from 'native-base';
 import Swipeout from 'react-native-swipeout';
-// import { deleteJournal } from '../actions';
 
 const renderList = (journals, deleteJournal) => {
     if (journals) {
         
         function callDeleteJournal() {
-            // console.log(this);
-            // console.log(typeof deleteJournal);
             deleteJournal(this.id);
         }
         

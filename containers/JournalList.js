@@ -5,7 +5,6 @@ import JournalList from '../components/JournalList';
 const mapDispatchToProps = dispatch => {
     return {
         deleteJournal: id => {
-            // console.log(`id: ${id}`);
             dispatch(deleteJournal(id));
         }
     }

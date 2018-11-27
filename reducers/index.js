@@ -8,6 +8,7 @@ import {
     RECEIVE_JOURNALS
 } from '../constants/ActionTypes';
 import { AsyncStorage } from 'react-native';
+import { fetchAllJournals } from '../actions';
 
 export const saveJournals = async state => {
     try {
@@ -27,10 +28,16 @@ export const deleteJournals = async () => {
 
 export const deleteJournal = async (state, action) => {
     try {
-        console.log(`state: ${state}`);
-        console.log(`action: ${action}`);
-        // Insert fun asyncStorage logic here
-        console.log(`Delete a journal here`);
+        
+        /* get all Journals from async storage */
+        var journals = JSON.parse(await AsyncStorage.getItem('Journals'));
+        /* filter by ID */
+        journals = JSON.stringify(journals.filter(journal => journal.id !== action.payload.journalId));
+
+        /* merge new Jourals item to asyncStorage */
+        // TODO get this working
+        await AsyncStorage.removeItem('Jourals', journals);
+        await AsyncStorage.setItem('Jourals', journals);
     } catch (err) {
         console.error(`Error (deleteJournal): ${err.message}`);
     }
@@ -84,7 +91,7 @@ const AddJournal = (state, action) => {
             deleteJournals();
             return;
         case DELETE_JOURNAL:
-            deleteJournal();
+            deleteJournal(state, action);
             return;
         default:
             return state;
