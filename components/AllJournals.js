@@ -3,14 +3,14 @@ import {
     View,
     StyleSheet
 } from 'react-native';
-import JournalList from './JournalList';
-import AddJournal from '../containers/AddJournal';
-import DeleteJournal from '../containers/DeleteJournal';
+import JournalList from '../containers/JournalList';
+// import AddJournal from '../containers/AddJournal';
+// import DeleteJournal from '../containers/DeleteJournal';
 import DeleteJournals from '../containers/DeleteJournals';
 import {Container, Content } from 'native-base';
-import {
-    ADD_JOURNAL,
-} from '../constants/ActionTypes';
+// import {
+//     ADD_JOURNAL,
+// } from '../constants/ActionTypes';
 import AddNewButton from '../components/AddNewButton';
 
 const styles = StyleSheet.create({
@@ -41,7 +41,7 @@ class AllJournals extends Component {
                 <Content>
                     <JournalList journals={journals} />
                     <DeleteJournals />
-                    <DeleteJournal />
+                    {/* <DeleteJournal /> */}
                     <AddNewButton onBtnPress={this._addNewJournal.bind(this)} />
                 </Content>
             </Container>

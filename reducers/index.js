@@ -25,8 +25,10 @@ export const deleteJournals = async () => {
     }
 }
 
-export const deleteJournal = async () => {
+export const deleteJournal = async (state, action) => {
     try {
+        console.log(`state: ${state}`);
+        console.log(`action: ${action}`);
         // Insert fun asyncStorage logic here
         console.log(`Delete a journal here`);
     } catch (err) {
