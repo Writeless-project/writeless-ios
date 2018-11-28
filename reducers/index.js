@@ -35,8 +35,7 @@ export const deleteJournal = async (state, action) => {
         journals = JSON.stringify(journals.filter(journal => journal.id !== action.payload.journalId));
 
         /* merge new Jourals item to asyncStorage */
-        // TODO get this working
-        await AsyncStorage.removeItem('Jourals', journals);
+        await AsyncStorage.removeItem('Jourals');
         await AsyncStorage.setItem('Jourals', journals);
     } catch (err) {
         console.error(`Error (deleteJournal): ${err.message}`);
