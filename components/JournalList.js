@@ -1,19 +1,24 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import DeleteJournal from './DeleteJournal';
 import { Text, List, ListItem } from 'native-base';
 import Swipeout from 'react-native-swipeout';
 
-const renderList = journals => {
+const renderList = (journals, deleteJournal) => {
     if (journals) {
         
-        // the buttons that appear when the item is swiped to the left
-        var swipeoutBtns = [{
-            text: 'Delete',
-            backgroundColor: '#dd0000'
-        }];
-
+        function callDeleteJournal() {
+            deleteJournal(this.id);
+        }
+        
         return journals.map((journal, i) => {
+            // the buttons that appear when the item is swiped to the left
+            var swipeoutBtns = [{
+                text: 'Delete',
+                backgroundColor: '#dd0000',
+                onPress: callDeleteJournal.bind(journal)
+            }];
+
+
             return (
                 <Swipeout key={i} right={swipeoutBtns}>
                     <ListItem style={styles.listItem}>
@@ -27,10 +32,10 @@ const renderList = journals => {
     }
 }
 
-const JournalList = ({ journals }) => {
+const JournalList = ({ journals, deleteJournal }) => {
     return (
         <List>
-            {renderList(journals)}
+            {renderList(journals, deleteJournal)}
         </List>
     )
 }

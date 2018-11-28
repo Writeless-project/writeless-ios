@@ -37,9 +37,10 @@ export const deleteJournals = () => {
     }
 };
 
-export const deleteJournal = () => {
+export const deleteJournal = (journalId) => {
     return {
-        type: DELETE_JOURNAL
+        type: DELETE_JOURNAL,
+        payload: {journalId}
     }
 };
 
