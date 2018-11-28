@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 import AllJournals from '../containers/AllJournals';
 import configureStore from '../configureStore';
 import getTheme from '../native-base-theme/components';
-import { StyleProvider } from 'native-base';
+import { StyleProvider, Container } from 'native-base';
+import AddNewButton from '../components/AddNewButton';
 
 const store = configureStore();
 
@@ -14,11 +14,18 @@ export default class HomeScreen extends React.Component {
     title: 'Journals'
   };
 
+  _addNewJournal() {
+    this.props.navigation.navigate('AddJournal');
+}
+
   render() {
     return (
       <StyleProvider style={getTheme()}>
         <Provider store={store}>
-          <AllJournals navigation={this.props.navigation}/>
+          <Container>
+            <AllJournals navigation={this.props.navigation}/>
+            <AddNewButton onBtnPress={this._addNewJournal.bind(this)}/>
+          </Container>
         </Provider>
       </StyleProvider>
     );

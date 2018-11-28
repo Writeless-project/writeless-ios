@@ -12,7 +12,7 @@ export default class AddNoteButton extends Component {
         return (
             <View style={styles.container}>
                 <TouchableOpacity onPress={this.handlePress.bind(this)}>
-                    <Icon name="add-circle" />
+                    <Icon/>
                 </TouchableOpacity>
             </View>
         );
@@ -26,7 +26,7 @@ export default class AddNoteButton extends Component {
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        bottom: -55,
+        bottom: 0,
         right: 15,
     }
 });
