@@ -11,12 +11,16 @@ const store = configureStore();
 
 export default class AddNewJournal extends React.Component {
 
-    static navigationOptions = {
-        title: "Hi There",
+    static navigationOptions = ({navigation}) => ({
+        title: "New Journal",
         headerLeft: (
-            <BackButton name={'chevron-small-left'} size={42} navigation={this.props.navigation}/>
+            <BackButton name={'chevron-small-left'} 
+            size={42} 
+            nav={navigation}
+            location={'Main'}/>
         ),
-      };
+      });
+
 
     render() {
         return (

@@ -6,7 +6,7 @@ export default class BackButton extends React.Component {
     render() {
         return (
             <View>
-                <TouchableOpacity onPress={this.props.navigation.goBack()}>
+                <TouchableOpacity onPress={() => {this.props.nav.navigate(this.props.location)}}>
                     <Entypo name={this.props.name || "chevron-left"} size={this.props.size || 80} color="blue" />
                 </TouchableOpacity>
             </View>
