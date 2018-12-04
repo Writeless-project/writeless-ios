@@ -28,15 +28,18 @@ export const deleteJournals = async () => {
 
 export const deleteJournal = async (state, action) => {
     try {
-        
         /* get all Journals from async storage */
         var journals = JSON.parse(await AsyncStorage.getItem('Journals'));
         /* filter by ID */
-        journals = JSON.stringify(journals.filter(journal => journal.id !== action.payload.journalId));
+        journals = JSON.stringify(journals.filter(journal => {
+            if (journal.id !== action.payload.journalId) console.log(journal.title)
+            return journal.id !== action.payload.journalId
+        }));
 
         /* merge new Jourals item to asyncStorage */
-        await AsyncStorage.removeItem('Journals');
         await AsyncStorage.setItem('Journals', journals);
+        console.log(`stateeee: ${JSON.stringify(state)}`);
+        return state;
     } catch (err) {
         console.error(`Error (deleteJournal): ${err.message}`);
     }
@@ -56,32 +59,13 @@ const Journal = (state, action) => {
     }
 };
 
-const AddEntry = (state, action) => {
-    switch (action.type) {
-        case ADD_JOURNAL:
-            if (!state) {
-                state = [];
-            }
-            const journals = [...state, Journal(null, action)];
-            saveEntry(journals);
-            return journals;
-        case RECEIVE_JOURNALS:
-            return action.payload;
-        case DELETE_JOURNALS:
-            deleteJournals();
-            return;
-        default:
-            return state;
-    }
-};
-
 const AddJournal = (state, action) => {
     switch (action.type) {
         case ADD_JOURNAL:
             if (!state) {
                 state = [];
             }
-            const journals = [...state, Journal(null, action)];
+            let journals = [...state, Journal(null, action)];
             saveJournals(journals);
             return journals;
         case RECEIVE_JOURNALS:
@@ -90,8 +74,11 @@ const AddJournal = (state, action) => {
             deleteJournals();
             return;
         case DELETE_JOURNAL:
-            deleteJournal(state, action);
-            return;
+            console.log(`action.payload: ${JSON.stringify(action.payload)}`);
+            console.log(`journals before: ${JSON.stringify(state)}`);
+            state = deleteJournal(state, action);
+            console.log('not yetttt')
+            return state;
         default:
             return state;
     }

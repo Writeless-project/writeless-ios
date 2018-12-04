@@ -14,12 +14,12 @@ class AllJournals extends Component {
     }
 
     render() {
-        const { journals } = this.props;
-
+        const { journals } = this.props || state;
+        console.log(`journalssssss: ${JSON.stringify(journals)}`)
         return (
             <Container>
                 <Content>
-                    <JournalList journals={journals} />
+                    <JournalList journals={journals || [{}]} />
                     <DeleteJournals />
                 </Content>
             </Container>
