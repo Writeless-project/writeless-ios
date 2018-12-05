@@ -14,6 +14,8 @@ import AddNewButton from './components/AddNewButton';
 import HomeScreen from './screens/HomeScreen';
 import AddNewJournal from './screens/AddNewJournal';
 
+import { AsyncStorage } from 'react-native';
+
 const store = configureStore();
 
 // export default class App extends React.Component {

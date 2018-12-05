@@ -16,6 +16,13 @@ export const addEntry = (entry, journal) => {
     }
 };
 
+export const deleteEntry = entryId => {
+    return {
+        type: DELETE_JOURNAL,
+        payload: { entryId }
+    }
+};
+
 export const addJournal = journal => {
     return {
         type: ADD_JOURNAL,

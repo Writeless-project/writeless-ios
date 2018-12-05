@@ -30,12 +30,14 @@ export const deleteJournal = async (state, action) => {
     try {
         /* get all Journals from async storage */
         var journals = JSON.parse(await AsyncStorage.getItem('Journals'));
+
         /* filter by ID */
         journals = JSON.stringify(journals.filter(journal => journal.id !== action.payload.journalId));
 
         /* merge new Jourals item to asyncStorage */
         await AsyncStorage.setItem('Journals', journals);
-        return state;
+        
+        return journals;
     } catch (err) {
         console.error(`Error (deleteJournal): ${err.message}`);
     }
@@ -48,8 +50,7 @@ const Journal = (state, action) => {
                 id: action.id,
                 title: action.payload.title,
                 content: action.payload.content,
-                createdAt: new Date()
-            }
+                createdAt: new Date()            }
         default:
             return state;
     }
