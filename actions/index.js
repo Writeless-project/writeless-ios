@@ -25,19 +25,23 @@ const _addJournal = journals => {
 
 export const addJournal = (journal) => {
     return async (dispatch) => {
-        // if we can access the state here, we won't need to get the journals again here
-        let journals = JSON.parse(await AsyncStorage.getItem('Journals')) || [];
-        
-        // add the new journal here instead of in the reducer, because of the async await needed to set AsyncStorage
-        journals.push({
-            id: Date.now(),
-            title: journal.title,
-            content: journal.content,
-            createdAt: new Date()
-        });
-        
-        await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
-        dispatch(_addJournal(journals)); // set the journals in the state
+        try {
+            // if we can access the state here, we won't need to get the journals again here
+            let journals = JSON.parse(await AsyncStorage.getItem('Journals')) || [];
+            
+            // add the new journal here instead of in the reducer, because of the async await needed to set AsyncStorage
+            journals.push({
+                id: Date.now(),
+                title: journal.title,
+                content: journal.content,
+                createdAt: new Date()
+            });
+
+            await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
+            dispatch(_addJournal(journals)); // set the journals in the state
+        } catch (err) {
+            console.error(err);
+        }
     }
 };
 
@@ -50,14 +54,18 @@ const _deleteJournal = journals => {
 
 export const deleteJournal = (id) => {
     return async (dispatch) => {
-        // if we can access the state here, we won't need to get the journals again here
-        let journals = JSON.parse(await AsyncStorage.getItem('Journals'));
+        try {
+            // if we can access the state here, we won't need to get the journals again here
+            let journals = JSON.parse(await AsyncStorage.getItem('Journals'));
 
-        // only keep the journals that aren't the deleted journal
-        journals = journals.filter(journal => journal.id !== id);
+            // only keep the journals that aren't the deleted journal
+            journals = journals.filter(journal => journal.id !== id);
 
-        await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
-        dispatch(_deleteJournal(journals)); // set the journals in the state
+            await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
+            dispatch(_deleteJournal(journals)); // set the journals in the state
+        } catch (err) {
+            console.error(err);
+        }
     }
 };
 
@@ -69,8 +77,12 @@ const _deleteJournals = () => {
 
 export const deleteJournals = () => {
     return async (dispatch) => {
-        await AsyncStorage.removeItem('Journals'); // remove the journals from AsyncStorage
-        dispatch(_deleteJournals()); // remove the journals from the state
+        try {
+            await AsyncStorage.removeItem('Journals'); // remove the journals from AsyncStorage
+            dispatch(_deleteJournals()); // remove the journals from the state
+        } catch (err) {
+            console.error(err);
+        }
     }
 };
 
@@ -83,7 +95,11 @@ const _fetchAllJournals = journals => {
 
 export const fetchAllJournals = () => {
     return async dispatch => {
-        const journals = await AsyncStorage.getItem('Journals');
-        dispatch(_fetchAllJournals(JSON.parse(journals)));
+        try {
+            const journals = await AsyncStorage.getItem('Journals');
+            dispatch(_fetchAllJournals(JSON.parse(journals)));
+        } catch (err) {
+            console.error(err);
+        }
     }
 };
