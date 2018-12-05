@@ -18,7 +18,7 @@ const renderList = (journals, deleteJournal) => {
             }];
 
             return (
-                <Swipeout key={i} right={swipeoutBtns} sensitivity={100}>
+                <Swipeout key={i} right={swipeoutBtns} sensitivity={100} autoClose={true}>
                     <ListItem style={styles.listItem} onPress={() => console.log(`Pressed ${journal.title || "No journals"}`)}>
                         <Text>
                             {journal.title || "No journals. Please press the Add button below to add a journal!"}
