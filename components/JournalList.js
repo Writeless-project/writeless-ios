@@ -17,27 +17,15 @@ const renderList = (journals, deleteJournal) => {
                 onPress: callDeleteJournal.bind(journal)
             }];
 
-            if (journal.title) {
-                return (
-                    <Swipeout key={i} right={swipeoutBtns} sensitivity={100}>
-                        <ListItem style={styles.listItem} onPress={() => console.log(`Pressed ${journal.title}`)}>
-                            <Text>
-                                {journal.title}
-                            </Text>
-                        </ListItem>
-                    </Swipeout>
-                )
-            } else {
-                return (
-                    <Swipeout key={i}>
-                        <ListItem style={styles.listItem}>
-                            <Text>
-                                {"No journals. Please press the Add button below to add a journal!"}
-                            </Text>
-                        </ListItem>
-                    </Swipeout>
-                )
-            }
+            return (
+                <Swipeout key={i} right={swipeoutBtns} sensitivity={100}>
+                    <ListItem style={styles.listItem} onPress={() => console.log(`Pressed ${journal.title || "No journals"}`)}>
+                        <Text>
+                            {journal.title || "No journals. Please press the Add button below to add a journal!"}
+                        </Text>
+                    </ListItem>
+                </Swipeout>
+            )
         });
     }
 }
