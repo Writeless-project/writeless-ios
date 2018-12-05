@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import JournalList from '../containers/JournalList';
+import Entr from '../containers/JournalList';
 import DeleteJournals from '../containers/DeleteJournals';
-import {Container, Content } from 'native-base';
+import { Container, Content } from 'native-base';
 
 
 class AllJournals extends Component {

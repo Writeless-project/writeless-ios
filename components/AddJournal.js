@@ -13,7 +13,7 @@ const AddJournal = ({ addJournal, navigation }) => {
         addJournal(formValues);
         Keyboard.dismiss();
         resetForm({});
-        navigation.navigate('Main');
+        navigation.goBack();
     }
     
     return (
@@ -43,6 +43,7 @@ const AddJournal = ({ addJournal, navigation }) => {
                         onPress={props.handleSubmit}>
                             <Text>Submit</Text>
                         </Button>
+                        <Button title={'Go Back'} onPress={() => navigation.goBack()}/>                    
                     </View>
                 )}
             </Formik>

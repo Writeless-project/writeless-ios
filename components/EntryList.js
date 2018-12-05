@@ -2,39 +2,50 @@ import React from 'react';
 import { Text, List, ListItem } from 'native-base';
 import Swipeout from 'react-native-swipeout';
 
-const renderList = journals => {
-    if (journals) {
-        
+const renderList = entries => {
+    if (entries) {
         // the buttons that appear when the item is swiped to the left
         var swipeoutBtns = [{
             text: 'Delete',
             backgroundColor: '#dd0000'
         }];
 
-        return journals.map((journal, i) => {
-            return (
-                <Swipeout key={i} right={swipeoutBtns}>
-                    <ListItem style={styles.listItem}>
-                        <Text>
-                            {journal.title}
-                        </Text>
-                    </ListItem>
-                </Swipeout>
-            )
+        return entries.map((entry, i) => {
+            if (entry.title) {
+                return (
+                    <Swipeout key={i} right={swipeoutBtns} sensitivity={100}>
+                        <ListItem style={styles.listItem} onPress={() => console.log(`Pressed ${entry.title}`)}>
+                            <Text>
+                                {entry.title}
+                            </Text>
+                        </ListItem>
+                    </Swipeout>
+                )
+            } else {
+                return (
+                    <Swipeout key={i}>
+                        <ListItem style={styles.listItem}>
+                            <Text>
+                                {"No entries. Please press the Add button below to add a entry!"}
+                            </Text>
+                        </ListItem>
+                    </Swipeout>
+                )
+            }
         });
     }
 }
 
-const JournalList = ({ journals }) => {
+const EntryList = ({ entries }) => {
     return (
         <List>
-            {renderList(journals)}
+            {renderList(entries)}
         </List>
     )
 }
 
-JournalList.defaultProps = {
-    journals: []
+EntryList.defaultProps = {
+    entries: []
 }
 
-export default JournalList;
+export default EntryList;
