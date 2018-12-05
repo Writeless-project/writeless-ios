@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import HomeScreen from './screens/HomeScreen';
 import AddNewJournal from './screens/AddNewJournal';
 
+import { AsyncStorage } from 'react-native';
+
 const store = configureStore();
 
 const AppNavigator = createStackNavigator(
