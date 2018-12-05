@@ -5,10 +5,10 @@ import rootReducer from './reducers';
 
 const loggerMiddleware = createLogger();
 
-export default function configureStore(preloadedState) {
+export default function configureStore(initialState) {
     return createStore(
         rootReducer,
-        preloadedState,
+        initialState,
         applyMiddleware(
             thunkMiddleware,
             loggerMiddleware

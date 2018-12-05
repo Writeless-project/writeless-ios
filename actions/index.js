@@ -1,16 +1,9 @@
-import { 
-    ADD_ENTRY,
-    ADD_JOURNAL, 
-    UPDATE_JOURNAL,
-    DELETE_JOURNAL,
-    DELETE_JOURNALS,
-    FETCH_ALL_JOURNALS,
-    RECEIVE_JOURNALS } from '../constants/ActionTypes';
+import * as actionTypes from '../constants/ActionTypes';
 import { AsyncStorage } from 'react-native';
 
 export const addEntry = (entry, journal) => {
     return {
-        type: ADD_ENTRY,
+        type: actionTypes.ADD_ENTRY,
         id: Date.now(),
         payload: {entry, journal}
     }
@@ -18,37 +11,45 @@ export const addEntry = (entry, journal) => {
 
 export const addJournal = journal => {
     return {
-        type: ADD_JOURNAL,
+        type: actionTypes.ADD_JOURNAL,
         id: Date.now(),
-        payload: journal
+        journal: journal
     }
 };
 
 export const receiveJournals = journals => {
     return {
-        type: RECEIVE_JOURNALS,
-        payload: journals
+        type: actionTypes.RECEIVE_JOURNALS,
+        journals: journals
     }
 }; 
 
 export const deleteJournals = () => {
     return {
-        type: DELETE_JOURNALS
+        type: actionTypes.DELETE_JOURNALS
     }
 };
 
-export const deleteJournal = (journalId) => {
+export const _deleteJournal = journals => {
+    console.log('delete journals pt.2')
     return {
-        type: DELETE_JOURNAL,
-        payload: {journalId}
+        type: actionTypes.DELETE_JOURNAL,
+        journals: journals,
+    }
+};
+
+export const deleteJournal = (id) => {
+    return async (dispatch) => {
+        let journals = JSON.parse(await AsyncStorage.getItem('Journals'));
+        journals = journals.filter(journal => journal.id !== id);
+        await AsyncStorage.setItem('Journals', JSON.stringify(journals));
+        dispatch(_deleteJournal(journals));
     }
 };
 
 export const fetchAllJournals = () => {
-    return dispatch => {
-        return AsyncStorage.getItem('Journals')
-            .then(journals => {
-                dispatch(receiveJournals(JSON.parse(journals)));
-            });
+    return async dispatch => {
+        const journals = await AsyncStorage.getItem('Journals');
+        dispatch(receiveJournals(JSON.parse(journals)));
     }
 };
