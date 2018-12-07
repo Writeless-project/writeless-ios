@@ -1,5 +1,6 @@
 import * as actionTypes from '../constants/ActionTypes';
 import { AsyncStorage } from 'react-native';
+import { DatePicker } from 'native-base';
 
 // export const addEntry = (entry, journal) => {
 //     return {
@@ -30,11 +31,13 @@ export const addJournal = (journal) => {
             let journals = JSON.parse(await AsyncStorage.getItem('Journals')) || [];
             
             // add the new journal here instead of in the reducer, because of the async await needed to set AsyncStorage
+            let date = new Date();
+
             journals.push({
                 id: Date.now(),
-                title: journal.title || JSON.stringify(new Date()),
+                title: journal.title || date.toDateString(),
                 content: journal.content,
-                createdAt: new Date()
+                createdAt: date
             });
 
             await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage

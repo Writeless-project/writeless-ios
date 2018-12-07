@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Text, List, ListItem } from 'native-base';
 import Swipeout from 'react-native-swipeout';
 
-const renderList = (journals, navigation) => {
+const renderList = (journals, navigation, deleteJournal) => {
     if (journals) {
         function callDeleteJournal() {
             deleteJournal(this.id);
@@ -38,10 +38,10 @@ const renderList = (journals, navigation) => {
     }
 }
 
-const JournalList = ({ journals, navigation }) => {
+const JournalList = ({ journals, navigation, deleteJournal }) => {
     return (
         <List>
-            {renderList(journals, navigation)}
+            {renderList(journals, navigation, deleteJournal)}
         </List>
     )
 }
