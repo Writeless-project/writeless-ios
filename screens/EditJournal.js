@@ -12,6 +12,7 @@ export default class EditJournalScreen extends React.Component {
         super(props);
         selectedJournal = this.props.navigation.state.params;
     }
+    
     static navigationOptions = ({navigation}) => ({
         title: "Edit Journal",
         headerLeft: (
@@ -22,7 +23,6 @@ export default class EditJournalScreen extends React.Component {
             </View>
         ),
     });
-
 
     render() {
         return (

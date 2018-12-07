@@ -4,8 +4,8 @@ import EditJournal from '../components/EditJournal';
 
 const mapDispatchToProps = dispatch => {
     return {
-        editJournal: journal => {
-            dispatch(editJournal(journal));
+        editJournal: (formValues, journal)=> {
+            dispatch(editJournal(formValues, journal));
         }
     }
 }

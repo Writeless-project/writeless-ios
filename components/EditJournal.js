@@ -10,12 +10,10 @@ import { Text, Button, Item, Input, Form } from 'native-base';
 const EditJournal = (props) => {
     const navigation = props.navigation;
     const selectedJournal = props.navigation.state.params;
-    console.log('props', props);
+    
     // Is this the 'react way' of doing this? I don't know any other way w/out making it a class.
     function onSubmit(formValues, {resetForm}) {
-        // editJournal isn't being recognized for some reason
-        console.log('formValues', formValues)
-        props.editJournal(formValues);
+        props.editJournal(formValues, selectedJournal);
         Keyboard.dismiss();
         resetForm({});
         navigation.goBack();

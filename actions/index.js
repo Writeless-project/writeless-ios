@@ -52,22 +52,29 @@ const _editJournal = journals => {
     }
 };
 
-export const editJournal = (journal) => {
+export const editJournal = (formValues, selectedJournal) => {
     return async (dispatch) => {
         try {
+            let skipUpdate = false;
             // if we can access the state here, we won't need to get the journals again here
             let journals = JSON.parse(await AsyncStorage.getItem('Journals')) || [];
             
             // only keep the journal that matches the clicked on journal's id
             journals = journals.map(currJournal => {
-                // check in the if statement if the journals are equivalent. If so, no changes are needed
-                
                 // if it's the editted journal, return the new content
-                if (currJournal.id === journal.id) {
+                if (currJournal.id === selectedJournal.id) {
+                    // check if the journals are equivalent. If so, no changes are needed
+                    if (currJournal.title === formValues.title && 
+                        currJournal.content === formValues.content) {
+                            // set skipUpdate to true to avoid setting the data again
+                            skipUpdate = true;
+                            return currJournal;
+                    }
+                    // if the journal has changed, return the updated journal
                     return {
                         id: currJournal.id,
-                        title: journal.title || JSON.stringify(new Date()),
-                        content: journal.content,
+                        title: formValues.title || JSON.stringify(new Date()),
+                        content: formValues.content,
                         createdAt: currJournal.createdAt
                     }
                 }
@@ -75,8 +82,11 @@ export const editJournal = (journal) => {
                 return currJournal;
             });
 
-            await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
-            dispatch(_editJournal(journals)); // set the journals in the state
+            // if skipUpdate is false, don't update the state or AsyncStorage
+            if (!skipUpdate) {
+                await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
+                dispatch(_editJournal(journals)); // set the journals in the state
+            }
         } catch (err) {
             console.error(err);
         }
