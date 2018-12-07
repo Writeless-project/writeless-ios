@@ -15,6 +15,8 @@ export default (state = [], action) => {
             return action.journals;
         case actionTypes.RECEIVE_JOURNALS:
             return action.journals;
+        case actionTypes.EDIT_JOURNAL:
+            return action.journals;
         case actionTypes.DELETE_JOURNALS:
             return; // we might need to return something here
         case actionTypes.DELETE_JOURNAL:
