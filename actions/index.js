@@ -32,13 +32,61 @@ export const addJournal = (journal) => {
             // add the new journal here instead of in the reducer, because of the async await needed to set AsyncStorage
             journals.push({
                 id: Date.now(),
-                title: journal.title,
+                title: journal.title || JSON.stringify(new Date()),
                 content: journal.content,
                 createdAt: new Date()
             });
 
             await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
             dispatch(_addJournal(journals)); // set the journals in the state
+        } catch (err) {
+            console.error(err);
+        }
+    }
+};
+
+const _editJournal = journals => {
+    return {
+        type: actionTypes.EDIT_JOURNAL,
+        journals: journals
+    }
+};
+
+export const editJournal = (formValues, selectedJournal) => {
+    return async (dispatch) => {
+        try {
+            let skipUpdate = false;
+            // if we can access the state here, we won't need to get the journals again here
+            let journals = JSON.parse(await AsyncStorage.getItem('Journals')) || [];
+            
+            // only keep the journal that matches the clicked on journal's id
+            journals = journals.map(currJournal => {
+                // if it's the editted journal, return the new content
+                if (currJournal.id === selectedJournal.id) {
+                    // check if the journals are equivalent. If so, no changes are needed
+                    if (currJournal.title === formValues.title && 
+                        currJournal.content === formValues.content) {
+                            // set skipUpdate to true to avoid setting the data again
+                            skipUpdate = true;
+                            return currJournal;
+                    }
+                    // if the journal has changed, return the updated journal
+                    return {
+                        id: currJournal.id,
+                        title: formValues.title || JSON.stringify(new Date()),
+                        content: formValues.content,
+                        createdAt: currJournal.createdAt
+                    }
+                }
+                // else return the already existing content
+                return currJournal;
+            });
+
+            // if skipUpdate is false, don't update the state or AsyncStorage
+            if (!skipUpdate) {
+                await AsyncStorage.setItem('Journals', JSON.stringify(journals)); // set the journals in AsyncStorage
+                dispatch(_editJournal(journals)); // set the journals in the state
+            }
         } catch (err) {
             console.error(err);
         }

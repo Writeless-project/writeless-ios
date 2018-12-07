@@ -7,11 +7,13 @@ import {
 import { Formik } from 'formik';
 import { Text, Button, Item, Input, Form } from 'native-base';
 
-const AddJournal = ({ addJournal, navigation }) => {
-    console.log(addJournal)
+const EditJournal = (props) => {
+    const navigation = props.navigation;
+    const selectedJournal = props.navigation.state.params;
+    
     // Is this the 'react way' of doing this? I don't know any other way w/out making it a class.
     function onSubmit(formValues, {resetForm}) {
-        addJournal(formValues);
+        props.editJournal(formValues, selectedJournal);
         Keyboard.dismiss();
         resetForm({});
         navigation.goBack();
@@ -20,7 +22,9 @@ const AddJournal = ({ addJournal, navigation }) => {
     return (
         /* Wrapping Formik in a Form for the styling. There's gotta be a better way to do this */
         <Form>
-            <Formik onSubmit={onSubmit}>
+            <Formik 
+                onSubmit={onSubmit}
+                initialValues={{title: selectedJournal.title, content: selectedJournal.content}} >
                 {props => (
                     <View>
                         <Item>
@@ -39,9 +43,9 @@ const AddJournal = ({ addJournal, navigation }) => {
                         </Item>
 
                         <Button 
-                        full 
-                        style={styles.button}
-                        onPress={props.handleSubmit}>
+                            full 
+                            style={styles.button}
+                            onPress={props.handleSubmit}>
                             <Text>Submit</Text>
                         </Button>
                         <Button title={'Go Back'} onPress={() => navigation.goBack()}/>                    
@@ -60,4 +64,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AddJournal;
+export default EditJournal;
