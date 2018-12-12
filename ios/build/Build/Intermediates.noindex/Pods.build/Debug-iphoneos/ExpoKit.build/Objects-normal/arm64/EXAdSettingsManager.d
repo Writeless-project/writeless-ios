@@ -1,0 +1,46 @@
+dependencies: \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/ExpoKit/ios/Exponent/Versioned/Core/Api/FBAds/EXAdSettingsManager.m \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Target\ Support\ Files/ExpoKit/ExpoKit-prefix.pch \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/ExpoKit/ios/Exponent/Versioned/Core/Api/FBAds/EXAdSettingsManager.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTBridgeModule.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTDefines.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/ExpoKit/ios/Exponent/Versioned/Core/EXUnversioned.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAudienceNetwork.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdChoicesView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdDefines.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/UIView+FBNativeAdViewTag.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdIconView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdSettings.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdSize.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBInstreamAdView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBInterstitialAd.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBMediaView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBMediaViewVideoRenderer.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAd.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdStarRatingView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdBase.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBAdImage.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdCollectionViewAdProvider.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdsManager.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdCollectionViewCellProvider.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdBaseView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdViewAttributes.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdScrollView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdTableViewAdProvider.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeAdTableViewCellProvider.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeBannerAd.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBNativeBannerAdView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/FBAudienceNetwork/FBAudienceNetwork/FBRewardedVideoAd.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTUtils.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTAssert.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTConvert.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTAnimationType.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTBorderStyle.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTLog.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTPointerEvents.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Public/React/React/RCTTextDecorationLineType.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Private/yoga/Yoga.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Private/yoga/YGEnums.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Private/yoga/YGMacros.h

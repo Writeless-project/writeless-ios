@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import { Formik } from 'formik';
 import { Text, Button, Item, Input, Form } from 'native-base';
+import VoiceClass from './VoiceClass';
 
 const AddJournal = ({ addJournal, navigation }) => {
     // console.log(addJournal)
@@ -43,6 +44,7 @@ const AddJournal = ({ addJournal, navigation }) => {
                         onPress={props.handleSubmit}>
                             <Text>Submit</Text>
                         </Button>
+                        <VoiceClass />
                         <Button title={'Go Back'} onPress={() => navigation.goBack()}/>                    
                     </View>
                 )}

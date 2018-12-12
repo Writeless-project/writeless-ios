@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.m \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Target\ Support\ Files/FBSDKCoreKit/FBSDKCoreKit-prefix.pch \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequest+Internal.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKMacros.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAccessToken.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKCopying.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppEvents.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKApplicationDelegate.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKConstants.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKUtility.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLink.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkTarget.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkNavigation.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolving.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkResolver.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/Headers/Private/Bolts/BFAppLinkResolving.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkReturnToRefererController.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkReturnToRefererView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAppLinkUtility.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphErrorRecoveryProcessor.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKMeasurementEvent.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKMutableCopying.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKProfile.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKProfilePictureView.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKURL.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKWebViewAppLinkResolver.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKInternalUtility.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKLogger.h \
+  /Users/sammcgrath/Documents/Repositories.nosync/test/writeless/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSettings+Internal.h

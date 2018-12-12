@@ -67,9 +67,11 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow writeless to use your location</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Allow writeless to access your microphone</string>
+	<string>Allow writeless to access your microphone for voice-to-text transcription</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Allow writeless to leverage your phone&apos;s voice-to-text technology</string>
 	<key>NSMotionUsageDescription</key>
-	<string>Allow writeless to access your device's accelerometer</string>
+	<string>Allow writeless to access your device&apos;s accelerometer</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Give writeless permission to save photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
