@@ -1,6 +1,8 @@
 # writeless
 
-This is a repository that contains the official `writeless` app that is found in [this repository](https://github.com/Writeless-project/writeless).
+This is just a test repository to experiment using native RN libraries and Expo after eject.
+
+This is a repository that contains the official `writeless` app that is found in [this repository](https://github.com/Writeless-project/writeless). 
 
 ## Installation
 
